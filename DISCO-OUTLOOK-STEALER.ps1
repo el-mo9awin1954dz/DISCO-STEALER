@@ -1,4 +1,19 @@
 
+function Log-Message
+{
+    [CmdletBinding()]
+    Param
+    (
+        [Parameter(Mandatory=$true, Position=0)]
+        [string]$LogMessage
+    )
+
+    Write-Output (" [DZHACKLAB] - ELMO9AWIM {0} - {1}" -f (Get-Date), $LogMessage)
+}
+
+Log-Message " [*] START JOB ------------------- ELMO9AWIM "
+
+
 $olFolderInbox = 6
 $outlook = new-object -com outlook.application;
 $mapi = $outlook.GetNameSpace("MAPI");
